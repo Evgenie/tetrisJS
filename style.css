@@ -4,7 +4,7 @@
 
 .grid {
   display: grid;
-  place-content: center;
+  place-content: center end;
   grid-template-columns: 320px 200px;
 }
 
