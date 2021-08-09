@@ -1,16 +1,27 @@
+"use strict";
+
 class Piece {
   constructor(ctx) {
     this.ctx = ctx;
-    this.color = 'blue';
-    this.shape = [
-    [2, 0, 0],
-    [2, 2, 2],
-    [0, 0, 0]
-    ];
+    this.spawn();
+  }
 
-    //начальная позиция
-    this.x = 3;
+  // параметр noOfTypes - количество вариантов
+  randomizeTetraminoType(noOfTypes) {
+    return Math.floor(Math.random() * noOfTypes);
+  }
+
+  spawn() {
+    this.typeId = this.randomizeTetraminoType(COLORS.length - 1);
+    this.shape = SHAPES[this.typeId];
+    this.color = COLORS[this.typeId];
+    this.x = 0;
     this.y = 0;
+  }
+
+  // расположить фигурку в центре поля
+  setStartPosition() {
+    this.x = (this.typeId === 3) ? 4 : 3;
   }
 
   draw() {
@@ -29,6 +40,7 @@ class Piece {
   move(p) {
     this.x = p.x;
     this.y = p.y;
+    this.shape = p.shape;
   }
 }
 

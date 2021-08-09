@@ -1,17 +1,28 @@
 * {
   font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
 }
 
 .grid {
   display: grid;
-  place-content: center end;
-  grid-template-columns: 320px 200px;
+  height: 100vh;
+  place-content: center;
+  grid-template-columns: 500px 200px;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.right-column > div {
+  line-height: 60px;
+}
+
+.right-column > div > p {
+  font-size: 25px;
 }
 
 .game-board {
