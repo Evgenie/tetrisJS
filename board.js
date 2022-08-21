@@ -27,7 +27,7 @@ class Board {
     this.next.draw();
   }
 
-  //создает матрицу нужного размераЁ заполненную нулями
+  //создает матрицу нужного размера заполненную нулями
   getEmptyBoard() {
     return Array.from(
       { length: ROWS }, () => Array(COLS).fill(0)
@@ -68,14 +68,14 @@ class Board {
 
     // Транспонирование матрицы тетрамино
 
-    for (let y = 0; y < p.shape.length; ++y) {
+    for (let y = 0; y < clone.shape.length; ++y) {
       for (let x = 0; x < y; ++x) {
-        [p.shape[x][y], p.shape[y][x]] =
-          [p.shape[y][x], p.shape[x][y]];
+        [clone.shape[x][y], clone.shape[y][x]] =
+          [clone.shape[y][x], clone.shape[x][y]];
       }
     }
     // Изменение порядка колонок
-    p.shape.forEach(row => row.reverse());
+    clone.shape.forEach(row => row.reverse());
 
     return clone;
   }
