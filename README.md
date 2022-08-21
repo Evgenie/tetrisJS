@@ -1,3 +1,3 @@
 # Game Tetris written on JS
 
-:play: [Play](evgenie.github.io/tetrisjs/)
+[:video_game:](evgenie.github.io/tetrisjs/)
