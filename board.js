@@ -152,6 +152,7 @@ class Board {
 
 				// Добавить наверх поля новый пустой ряд клеток
 				this.grid.unshift(Array(COLS).fill(0));
+				console.table(this.grid);
 			}
 		});
 
