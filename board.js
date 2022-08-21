@@ -148,7 +148,7 @@ class Board {
 				lines++;
 
 				// Удалить этот ряд
-				this.grid.slice(y, 1);
+				this.grid.splice(y, 1);
 
 				// Добавить наверх поля новый пустой ряд клеток
 				this.grid.unshift(Array(COLS).fill(0));
