@@ -70,9 +70,6 @@ function play() {
 	resetGame();
 
 	animate();
-
-	//наглядное представление матрицы игрового поля
-	// console.table(board.grid);
 }
 
 const moves = {
@@ -123,7 +120,7 @@ let accountValues = {
 };
 
 function updateAccount(key, value) {
-	let element = document.getElementById('key');
+	let element = document.getElementById(key);
 	if (element) {
 		element.textContent = value;
 	}
