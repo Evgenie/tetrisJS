@@ -56,10 +56,6 @@ class Board {
 				);
 			});
 		});
-
-		// if (this.valid(p)) {
-		// 	this.piece.move(p);
-		// }
 	}
 
 	rotate(p) {
