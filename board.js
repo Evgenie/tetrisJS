@@ -113,7 +113,6 @@ class Board {
     } else {
       this.freeze();
       this.clearLines();
-      // console.table(this.grid);
 
       if (this.piece.y === 0) {
         //Game over
