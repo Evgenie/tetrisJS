@@ -159,7 +159,6 @@ class Board {
 			// Добавить очки за собранные линии
 			account.score += this.getLineClearPoints(lines, account.level);
 			account.lines += lines;
-
 			// Если собрано нужное кол-во линий, перейти на новый уровень
 			if (account.lines >= LINES_PER_LEVEL) {
 				// увеличить уровень

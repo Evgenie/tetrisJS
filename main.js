@@ -26,12 +26,21 @@ const time = {
 let requestId;
 
 function gameOver() {
-	this.ctx.fillStyle = 'black';
-	this.ctx.fillRect(1, 3, 8, 1.2);
-	this.ctx.font = '1px Arial';
-	this.ctx.fillStyle = 'red';
-	this.ctx.fillText('GAME OVER', 1.8, 4);
 	cancelAnimationFrame(requestId);
+	ctx.fillStyle = 'black';
+	ctx.fillRect(1, 3, 8, 1.2);
+	ctx.font = '1px Arial';
+	ctx.fillStyle = 'red';
+	ctx.fillText('GAME OVER', 1.8, 4);
+}
+
+function gameWin() {
+	cancelAnimationFrame(requestId);
+	ctx.fillStyle = 'black';
+	ctx.fillRect(1, 3, 8, 1.2);
+	ctx.font = '1px Arial';
+	ctx.fillStyle = 'green';
+	ctx.fillText('YOU WIN!', 1.8, 4);
 }
 
 function animate(now = 0) {
@@ -41,9 +50,15 @@ function animate(now = 0) {
 	if (time.elapsed > time.level) {
 		// начать отсчет сначала
 		time.start = now;
+		//WIN!
 		// "уронить" активную фигурку
 		if (!board.drop()) {
 			gameOver();
+			return;
+		}
+		if (account.level > 1) {
+			board.drop();
+			gameWin();
 			return;
 		}
 	}
