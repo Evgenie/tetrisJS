@@ -104,11 +104,11 @@ document.addEventListener('keydown', (event) => {
 			board.piece.move(p);
 			if (event.key === KEY.DOWN) {
 				account.score += POINTS.SOFT_DROP;
-				//стирание старого отображения фигуры на холсте
-				ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-				board.piece.draw();
 			}
+			//стирание старого отображения фигуры на холсте
+			ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+			board.piece.draw();
 		}
 	}
 });
